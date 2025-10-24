@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-note-highlights",
+  "name": "Random Highlights",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Surfaces random highlights saved to your vault with the Kindle Highlights Plugin.",
+  "author": "Niall Bell",
+  "authorUrl": "https://niallbell.com",
+  "isDesktopOnly": true
+}
