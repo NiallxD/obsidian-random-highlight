@@ -95,17 +95,9 @@ export default class BookHighlightsPlugin extends Plugin {
 
     // Add settings tab
     this.addSettingTab(new BookHighlightsSettingTab(this.app, this));
-
-    // Auto-refresh when files change if enabled
-    if (this.settings.autoRefresh) {
-      this.registerEvent(
-        this.app.vault.on('modify', (file) => {
-          if (file.path.endsWith('.md')) {
-            this.refreshAllViews();
-          }
-        })
-      );
-    }
+    
+    // Initial refresh when plugin loads
+    this.refreshAllViews();
 	}
 
   async onunload() {
@@ -134,15 +126,6 @@ export default class BookHighlightsPlugin extends Plugin {
         this.settings.refreshInterval * 1000 // Convert to milliseconds
       );
     }
-    
-    // Still keep the file modification listener
-    this.registerEvent(
-      this.app.vault.on('modify', (file) => {
-        if (file.path.endsWith('.md')) {
-          this.refreshAllViews();
-        }
-      })
-    );
   }
   
   private clearAutoRefresh() {
