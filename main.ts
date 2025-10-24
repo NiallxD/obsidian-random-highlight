@@ -262,7 +262,7 @@ class BookHighlightsSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName('Maximum highlights to load')
-      .setDesc('Maximum number of highlights to load (0 for no limit)')
+      .setDesc('The more highlights we load, the bigger selection we have (0 for no limit)')
       .addText(text => text
         .setValue(this.plugin.settings.maxHighlights.toString())
         .onChange(async (value) => {
@@ -272,7 +272,7 @@ class BookHighlightsSettingTab extends PluginSettingTab {
         
     new Setting(containerEl)
       .setName('Number of random highlights')
-      .setDesc('Number of random highlights to display')
+      .setDesc('Number of random highlights to display in the pane.')
       .addText(text => text
         .setValue(this.plugin.settings.randomHighlightsCount.toString())
         .onChange(async (value) => {
