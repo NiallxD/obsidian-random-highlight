@@ -292,21 +292,6 @@ class BookHighlightsSettingTab extends PluginSettingTab {
         
     // Add a separator
     containerEl.createEl('h3', { text: 'Note Filtering' });
-      
-    const templateDiv = containerEl.createEl('div', { 
-      cls: 'setting-item-control',
-      attr: { style: 'margin-bottom: 1em;' }
-    });
-    
-    const templateCode = templateDiv.createEl('pre', { 
-      cls: 'code-block',
-      text: '> [!abstract] Highlighted: {{createdDate | date("DD-MM-YYYY")}}\n> Page Number: {{page}}\n> Location: {{location}}\n> Link: {{appLink}}\n> \n> {{text}}\n> \n> My Comments: \n> \n> {{note}}'
-    });
-    
-    templateCode.style.whiteSpace = 'pre-wrap';
-    templateCode.style.padding = '1em';
-    templateCode.style.backgroundColor = 'var(--background-modifier-form-field)';
-    templateCode.style.borderRadius = '4px';
     
     // Filter property setting
     new Setting(containerEl)
